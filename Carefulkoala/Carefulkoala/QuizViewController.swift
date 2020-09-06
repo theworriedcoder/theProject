@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     var score:Double = 0.0
     var a = true
     var b = true
@@ -70,6 +70,51 @@ class ViewController: UIViewController {
                 holder.addSubview(outdoor)
                 outdoor.tag = 1
                 outdoor.addTarget(self, action: #selector(buttonPressedOne(_:)), for: .touchUpInside)
+        // LABELS
+        
+        
+        let halp = UIButton(frame: CGRect(x:buttonSize, y: 50, width: buttonSize+80, height:buttonSize/2))
+        halp.setTitleColor(.darkGray, for: .normal)
+        halp.setTitle("Indoors or ourdoors?", for: .normal)
+        halp.backgroundColor = .clear
+        holder.addSubview(halp)
+        
+        let balp = UIButton(frame: CGRect(x:buttonSize, y: buttonSize+40, width: buttonSize+80, height:buttonSize/2))
+        balp.setTitleColor(.darkGray, for: .normal)
+        balp.setTitle("How old are you?", for: .normal)
+        balp.backgroundColor = .clear
+        holder.addSubview(balp)
+        
+        let yalp = UIButton(frame: CGRect(x:buttonSize-160, y: 2*buttonSize+130, width: buttonSize+400, height:buttonSize/2))
+        yalp.setTitleColor(.darkGray, for: .normal)
+        yalp.setTitle("Preexisting conditions? (ex. asthma,", for: .normal)
+        yalp.backgroundColor = .clear
+        holder.addSubview(yalp)
+        
+        let yalpTwo = UIButton(frame: CGRect(x:buttonSize-160, y:  2*buttonSize + 160, width: buttonSize+400, height:buttonSize/2))
+        yalpTwo.setTitleColor(.darkGray, for: .normal)
+        yalpTwo.setTitle("COPD, lung cancer, ...)", for: .normal)
+        yalpTwo.backgroundColor = .clear
+        holder.addSubview(yalpTwo)
+
+        let kalp = UIButton(frame: CGRect(x:buttonSize, y: 3*buttonSize+140, width: buttonSize+80, height:buttonSize/2))
+        kalp.setTitleColor(.darkGray, for: .normal)
+        kalp.setTitle("Dimensions of area?", for: .normal)
+        kalp.backgroundColor = .clear
+        holder.addSubview(kalp)
+        
+        let malp = UIButton(frame: CGRect(x:buttonSize-40, y: 4*buttonSize + 120, width: buttonSize + 160, height:buttonSize/2))
+        malp.setTitleColor(.darkGray, for: .normal)
+        malp.setTitle("Number of people? (estimate)", for: .normal)
+        malp.backgroundColor = .clear
+        holder.addSubview(malp)
+        
+        let galp = UIButton(frame: CGRect(x:buttonSize-60, y: 5*buttonSize + 100, width: buttonSize+200, height:buttonSize/2))
+        galp.setTitleColor(.darkGray, for: .normal)
+        galp.setTitle("Do you have masks that you can use?", for: .normal)
+        galp.backgroundColor = .clear
+        holder.addSubview(galp)
+
         
 
         
@@ -475,7 +520,7 @@ class ViewController: UIViewController {
            }
      }
 
-    extension ViewController : UITextFieldDelegate {
+    extension QuizViewController : UITextFieldDelegate {
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
